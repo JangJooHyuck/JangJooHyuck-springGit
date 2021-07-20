@@ -7,9 +7,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class emailChecker {
 
+    static String regex = "^[_a-z0-9-]+(.[_a-z0-9-]+)*@(?:\\w+\\.)+\\w+$";
+
     public static boolean isValidEmail(String email){ 
-        boolean isValid = false;
-        String regex = "^[_a-z0-9-]+(.[_a-z0-9-]+)*@(?:\\w+\\.)+\\w+$";
+       
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(email); 
    
